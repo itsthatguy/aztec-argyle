@@ -65,7 +65,7 @@ class Lo5
     # who = @getAvatar(sid)
 
     # # data{sid: sid, name: dude, data: msg}
-    p = gapi.hangout.getParticipantById(event.senderId).person
+    p = gapi.hangout.getParticipantById(event.senderId)
     return msg =
       sid: p.id
       name: p.person.displayName
