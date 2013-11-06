@@ -61,21 +61,30 @@ class Main
   focusInput: -> setTimeout ( => $("#message").focus() ), 0
 
   setupEvents: ->
+    _self = @
     $(window).on 'keydown', (e) =>
       code = e.keyCode || e.which
       if (code == 9)
         @focusInput()
         e.preventDefault()
 
+    $input = $("#message")
+    $input.on 'focus', (e) =>
+      $('.input-wrapper').addClass('focus')
+
+    $input.on 'blur', (e) =>
+      $('.input-wrapper').removeClass('focus')
+
+
     $('a.button, button').on 'click', (e) => @focusInput()
 
-    _self = @
     $('.avatars').on "click", ".avatar", (e) =>
       sid = $(e.currentTarget).attr("data-sid")
       _self.toggleVisibility(sid)
       
 
     $('.avatars').on 'click', (e) => @focusInput()
+
 
     _self = @
     $("form").submit (e) =>

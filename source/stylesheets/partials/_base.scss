@@ -166,6 +166,13 @@ $link-hover-color: $ruby;
     }
   }
 }
+.input-wrapper {
+  background: white;
+  &.focus {
+    background: darken(#fff, 2%);
+    padding: 10px 10px 9px;
+  }
+}
 input#message {
   @include border-radius(none);
   @include transition(all .4s);
@@ -175,7 +182,6 @@ input#message {
     font-style: italic;
   };
   font-size: emCalc(14);
-  padding: 10px 10px 9px;
   border: none;
   margin: 0;
   position: relative;

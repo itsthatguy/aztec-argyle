@@ -34,7 +34,7 @@
           <ul id="messages"></ul>
         </div>
         <div class="row collapse">
-          <div class="small-12 columns">
+          <div class="small-12 columns input-wrapper">
             <input autocomplete="off" id="message" placeholder="Enter Text" tabindex="1" type="text"/>
             <button class="prefix" tabindex="-1">Submit</button>
           </div>
