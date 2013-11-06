@@ -14,7 +14,7 @@
 #   person.image.url )
 
 class Lo5
-  queue = []
+  logging: false
 
   constructor: ->
     @setupHangoutEvents()
@@ -29,28 +29,28 @@ class Lo5
 
       window.main.setUser @getUserData([gapi.hangout.getLocalParticipant()])[0]
       participants = gapi.hangout.getParticipants()
-      console.log "onApiReady", participants
+      @log "onApiReady", participants
       window.main.addUsers @getUserData(participants)
 
     # onParticipantsAdded
     gapi.hangout.onParticipantsAdded.add (event) =>
-      console.log "onParticipantsAdded", event.addedParticipants
+      @log "onParticipantsAdded", event.addedParticipants
       window.main.addUsers @getUserData(event.addedParticipants)
 
     # onParticipantsRemoved
     gapi.hangout.onParticipantsRemoved.add (event) =>
-      console.log "onParticipantsRemoved", event.removedParticipants
+      @log "onParticipantsRemoved", event.removedParticipants
       window.main.removeUsers @getUserData(event.removedParticipants)
 
     # onStateChanged
     gapi.hangout.data.onStateChanged.add (event) =>
-      console.log "onStateChanged", event.state
+      @log "onStateChanged", event.state
       window.main.updateState event.state
 
     # onMessageReveived
     gapi.hangout.data.onMessageReceived.add (event) =>
-      console.log "onMessageReceived", event
-      console.log "getParticipantById", @getMessageData(event)
+      @log "onMessageReceived", event
+      @log "getParticipantById", @getMessageData(event)
       window.main.addMessage(@getMessageData(event))
 
   # THIS IS FOR DEV ONLY
@@ -94,13 +94,15 @@ class Lo5
 
   queueMessage: (event, data) ->
     item = JSON.stringify("event": event, "data": data)
-    console.log "queueMessage:On", item
+    @log "queueMessage:On", item
     gapi.hangout.data.sendMessage item
 
   releaseQueue: ->
     for item in queue
       @ws.send item
 
+  log: (params...) ->
+    console.log(params) if @logging 
     
 
   $ -> window.lo5 = new Lo5()

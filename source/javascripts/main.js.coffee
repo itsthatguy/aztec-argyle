@@ -2,7 +2,7 @@
 
 class Main
 
-  logging: true
+  logging: false
 
   colors: [
     "yellow",
