@@ -167,6 +167,7 @@ $link-hover-color: $ruby;
   }
 }
 input#message {
+  @include box-sizing(content-box);
   @include border-radius(none);
   @include transition(all .4s);
   @include box-shadow(none);
@@ -175,7 +176,7 @@ input#message {
     font-style: italic;
   };
   font-size: emCalc(14);
-  padding: 20px 10px;
+  padding: 10px 10px 9px;
   border: none;
   margin: 0;
   position: relative;
