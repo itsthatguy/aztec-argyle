@@ -155,15 +155,9 @@ class Main
     $li = $('#messages').find('li:last')
     $el.find('.circle').clone().prependTo($li)
 
-  wrapText: (text) ->
-    h3 = $('h3')
-    text = h3.text().split(' ')
-
-    newText = text.map (txt) -> '<span>' + txt + '</span>'
-    console.log(newText)
-
   breakupText: (text) ->
     text = text.match(/.{1,24}/g).map (txt) -> '<span>' + txt + '</span>'
+    text.join()
 
   toLink: (text) ->
     urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/)(%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
