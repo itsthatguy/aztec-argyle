@@ -157,7 +157,7 @@ class Main
 
   breakupText: (text) ->
     text = text.match(/.{1,24}/g).map (txt) -> '<span>' + txt + '</span>'
-    text.join()
+    text.join("")
 
   toLink: (text) ->
     urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/)(%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
