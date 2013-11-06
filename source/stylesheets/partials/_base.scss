@@ -167,6 +167,7 @@ $link-hover-color: $ruby;
   }
 }
 .input-wrapper {
+  @include transition(all .4s);
   background: white;
   padding: 10px 10px 9px;
   &.focus { background: darken(#fff, 2%); }
