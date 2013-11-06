@@ -160,7 +160,7 @@ class Main
 
     return @htmlEntities(text).replace urlRegex, (url) -> 
       if ( ( url.indexOf(".jpg") > 0 ) || ( url.indexOf(".png") > 0 ) || ( url.indexOf(".gif") > 0 ) )
-        return '<a href="' + url + '" target="_blank" class="icon-link"><img src="' + url + '" class="thumb"></a>'
+        return '<a href="' + url + '" target="_blank" class="icon-link break-all"><img src="' + url + '" class="thumb"></a>'
       else
         return '<a href="' + url + '" target="_blank"><i class="icon-link"></i><span>' + url + '</span></a>'
 

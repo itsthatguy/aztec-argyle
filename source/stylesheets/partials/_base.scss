@@ -95,9 +95,10 @@ body {
   position: relative;
   z-index: 1;
   resize: vertical;
-  word-break: break-all;
   .circle { resize: none; }
 }
+
+.break-all { word-break: break-all; }
 $link-color: $yellow;
 $link-hover-color: $ruby;
 #messages {
