@@ -87,7 +87,7 @@ class Main
           "sid": "#{@user.sid}"
           "name": "#{who}"
           "data": msg
-        if (msg == "/reset") then @window.lo5.clearState()
+        if (msg == "/reset") then window.lo5.clearState()
         else window.lo5.sendMessage(msg)
         $("#message").val("")
       return false
