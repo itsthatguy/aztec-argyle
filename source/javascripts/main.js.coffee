@@ -83,13 +83,13 @@ class Main
       if ($("#message").val().length > 0)
         who = @user.name
         msg = $("#message").val()
-        _self.addMessage
-          "sid": "#{@user.sid}"
-          "name": "#{who}"
-          "data": msg
         if (msg == "/reset")
           window.lo5.clearState()
         else
+          _self.addMessage
+            "sid": "#{@user.sid}"
+            "name": "#{who}"
+            "data": msg
           window.lo5.sendMessage(msg)
         $("#message").val("")
       return false
