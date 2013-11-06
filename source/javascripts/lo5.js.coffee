@@ -57,6 +57,7 @@ class Lo5
   clearState: ->
     keys = gapi.hangout.data.getKeys()
     for key in keys
+      @setState(key, 0)
       gapi.hangout.data.clearValue(key)
 
   getMessageData: (event) ->
