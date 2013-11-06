@@ -85,9 +85,9 @@ class Main
         msg = $("#message").val()
         _self.addMessage
           "sid": "#{@user.sid}"
-          "name": "#{@user.name}"
+          "name": "#{who}"
           "data": msg
-        window.lo5.sendMessage(who, msg)
+        window.lo5.sendMessage(msg)
         $("#message").val("")
       return false
 
