@@ -50,7 +50,7 @@ class Lo5
     # onMessageReveived
     gapi.hangout.data.onMessageReceived.add (event) =>
       console.log "onMessageReceived", event
-      console.log "getParticipantById", getParticipantById(event.senderId)
+      console.log "getParticipantById", gapi.hangout.getParticipantById(event.senderId)
       window.main.addMessage()
 
   # THIS IS FOR DEV ONLY
