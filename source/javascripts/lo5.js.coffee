@@ -24,7 +24,7 @@ class Lo5
     # onApiReady
     gapi.hangout.onApiReady.add (event) =>
       ####################################
-      @clearState() # THIS IS FOR DEV ONLY
+      # @clearState() # THIS IS FOR DEV ONLY
       ####################################
 
       window.main.setUser @getUserData([gapi.hangout.getLocalParticipant()])[0]
