@@ -50,14 +50,26 @@ class Lo5
     # onMessageReveived
     gapi.hangout.data.onMessageReceived.add (event) =>
       console.log "onMessageReceived", event
-      console.log "getParticipantById", gapi.hangout.getParticipantById(event.senderId)
-      window.main.addMessage()
+      console.log "getParticipantById", @getMessageData(event)
+      window.main.addMessage(@getMessageData(event))
 
   # THIS IS FOR DEV ONLY
   clearState: ->
     keys = gapi.hangout.data.getKeys()
     for key in keys
       gapi.hangout.data.clearValue(key)
+
+  getMessageData: (event) ->
+    # sid = data["sid"]
+    # msg = @toLink(data["data"])
+    # who = @getAvatar(sid)
+
+    # # data{sid: sid, name: dude, data: msg}
+    p = gapi.hangout.getParticipantById(event.senderId).person
+    return msg =
+      sid: p.id
+      name: p.person.displayName
+      data: event.message
 
 
   getUserData: (persons) ->
