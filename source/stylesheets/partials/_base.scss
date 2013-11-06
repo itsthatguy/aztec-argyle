@@ -167,7 +167,6 @@ $link-hover-color: $ruby;
   }
 }
 input#message {
-  @include box-sizing(content-box);
   @include border-radius(none);
   @include transition(all .4s);
   @include box-shadow(none);
