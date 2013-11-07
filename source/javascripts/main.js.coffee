@@ -156,7 +156,7 @@ class Main
     $el.find('.circle').clone().prependTo($li)
 
   breakupText: (text) ->
-    text = text.match(/.{1,24}/g).map (txt) -> '<span>' + txt + '</span>'
+    text = text.match(/.{1,36}/g).map (txt) -> '<span>' + txt + '</span>'
     text.join("")
 
   toLink: (text) ->

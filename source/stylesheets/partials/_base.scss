@@ -112,6 +112,7 @@ $link-hover-color: $ruby;
     > i { color: white !important; }
   }
   li {
+    span:not(.name) { @include inline-block; line-height: 1.6em; }
     span.name {
       font-size: emCalc(12);
       font-weight: 300;
