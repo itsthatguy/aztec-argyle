@@ -10,3 +10,6 @@ source/javascripts/main.js.coffee
 // the communication layer for the google api
 source/javascripts/lo5.js.coffee
 ```
+
+
+https://hangoutsapi.talkgadget.google.com/hangouts?authuser=0&gid=476441948209
