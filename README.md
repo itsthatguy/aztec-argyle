@@ -11,5 +11,12 @@ source/javascripts/main.js.coffee
 source/javascripts/lo5.js.coffee
 ```
 
+## How to use
 
-https://hangoutsapi.talkgadget.google.com/hangouts?authuser=0&gid=476441948209
+Click the button below to add the app to your hangout
+
+<a href="https://plus.google.com/hangouts/_?gid=APP_ID" style="text-decoration:none;">
+  <img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-60x230-normal.png"
+    alt="Start a Hangout"
+    style="border:0;width:230px;height:60px;"/>
+</a>
