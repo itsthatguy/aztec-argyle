@@ -122,8 +122,8 @@ class Main
 
   addMessage: (data) ->
     sid = data["sid"]
-    msg = @checkForCode(data["data"])
     msg = @toLink(data["data"])
+    msg = @checkForCode(data["data"])
     who = @getAvatar(sid)
 
     $('#messages').append("<li class=#{@userColor[sid]}><p><span class='name'>#{who['name']}</span> #{msg}</p></li>")
