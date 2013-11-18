@@ -104,7 +104,7 @@ class Main
             "name": "#{who}"
             "data": msg
           window.lo5.sendMessage(msg)
-        $("#message").val("")
+        $("#message").val('').replace("\n", "")
       return false
 
   updateState: (users) ->
