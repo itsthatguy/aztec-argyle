@@ -4,7 +4,7 @@
   &:-moz-placeholder { @content; }
   &::-moz-placeholder { @content; }
   &:-ms-input-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; } 
+  &::-webkit-input-placeholder { @content; }
 }
 
 
@@ -54,7 +54,7 @@ body {
   text-align: center;
   font-size: emCalc(15);
   cursor: pointer;
-  
+
 
   &.off,
   &[data-state="0"] {
@@ -98,7 +98,7 @@ body {
   .circle { resize: none; }
 }
 
-.break-all { word-break: break-all; }
+.break-all { word-break: break-word; }
 $link-color: $yellow;
 $link-hover-color: $ruby;
 #messages {
@@ -130,7 +130,7 @@ $link-hover-color: $ruby;
 
       }
       i[class^="icon-"] {
-        font-size: .8em; 
+        font-size: .8em;
         margin-right: 4px;
       }
       a[class^="icon-"] {

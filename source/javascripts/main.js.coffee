@@ -81,7 +81,7 @@ class Main
     $('.avatars').on "click", ".avatar", (e) =>
       sid = $(e.currentTarget).attr("data-sid")
       _self.toggleVisibility(sid)
-      
+
 
     $('.avatars').on 'click', (e) => @focusInput()
 
@@ -107,7 +107,7 @@ class Main
     for key, value of users
       @applyVisibility key, value
 
-      
+
   sendVisibility: (sid) ->
     state = @setVisibility(sid)
     window.lo5.sendState(sid, state)
@@ -156,14 +156,14 @@ class Main
     $el.find('.circle').clone().prependTo($li)
 
   breakupText: (text) ->
-    text = text.match(/.{1,36}/g).map (txt) -> '<span>' + txt + '</span>'
+    text = text.match(/.{1,36}/g).map (txt) ->  txt + '<wbr></wbr>'
     text.join("")
 
   toLink: (text) ->
     urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/)(%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
 
     if urlRegex.test(text)
-      return @htmlEntities(text).replace urlRegex, (url) => 
+      return @htmlEntities(text).replace urlRegex, (url) =>
         if ( ( url.indexOf(".jpg") > 0 ) || ( url.indexOf(".png") > 0 ) || ( url.indexOf(".gif") > 0 ) )
           return '<a href="' + url + '" target="_blank" class="icon-link"><img src="' + url + '" class="thumb"></a>'
         else
@@ -174,6 +174,6 @@ class Main
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
   log: (params...) ->
-    console.log(params) if @logging 
+    console.log(params) if @logging
 
 $ -> window.main = new Main()
