@@ -156,6 +156,7 @@ class Main
     $el.find('.circle').clone().prependTo($li)
 
   parseMessage: (text) ->
+    text = @htmlEntities(text)
     text = @toLink(text)
     text = @checkForCode(text)
 
@@ -174,7 +175,7 @@ class Main
     urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/)(%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
 
     if urlRegex.test(text)
-      return @htmlEntities(text).replace urlRegex, (url) =>
+      return text.replace urlRegex, (url) =>
         if ( ( url.indexOf(".jpg") > 0 ) || ( url.indexOf(".png") > 0 ) || ( url.indexOf(".gif") > 0 ) )
           return '<a href="' + url + '" target="_blank" class="icon-link"><img src="' + url + '" class="thumb"></a>'
         else
