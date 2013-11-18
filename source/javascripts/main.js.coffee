@@ -122,8 +122,7 @@ class Main
 
   addMessage: (data) ->
     sid = data["sid"]
-    msg = @toLink(data["data"])
-    msg = @checkForCode(data["data"])
+    msg = @parseMessage(data["data"])
     who = @getAvatar(sid)
 
     $('#messages').append("<li class=#{@userColor[sid]}><p><span class='name'>#{who['name']}</span> #{msg}</p></li>")
@@ -156,11 +155,16 @@ class Main
     $li = $('#messages').find('li:last')
     $el.find('.circle').clone().prependTo($li)
 
+  parseMessage: (text) ->
+    text = @toLink(text)
+    text = @checkForCode(text)
+
   checkForCode: (text) ->
     regex = /^\s{2,}/g
     if regex.test(text)
       console.log true
       text = '<pre><code>' + text + '</code></pre>'
+    else text
 
   breakupText: (text) ->
     text = text.match(/.{1,36}/g).map (txt) ->  txt + '<wbr></wbr>'
