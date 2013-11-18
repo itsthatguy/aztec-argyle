@@ -122,6 +122,7 @@ class Main
 
   addMessage: (data) ->
     sid = data["sid"]
+    msg = @checkForCode(data["data"])
     msg = @toLink(data["data"])
     who = @getAvatar(sid)
 
@@ -154,6 +155,11 @@ class Main
   addChatAvatar: ($el) ->
     $li = $('#messages').find('li:last')
     $el.find('.circle').clone().prependTo($li)
+
+  checkForCode: (text) ->
+    regex = /^\s{2,}/g
+    if regex.test(text)
+      text = '<pre><code>' + text + '</code></pre>'
 
   breakupText: (text) ->
     text = text.match(/.{1,36}/g).map (txt) ->  txt + '<wbr></wbr>'
