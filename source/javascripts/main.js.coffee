@@ -76,7 +76,7 @@ class Main
       $('.input-wrapper').removeClass('focus')
 
 
-    $input.on "keypress", (e) =>
+    $input.on "keyup", (e) =>
       if (e.keyCode == 13 && !e.shiftKey)
         $("form").submit()
 
@@ -104,7 +104,7 @@ class Main
             "name": "#{who}"
             "data": msg
           window.lo5.sendMessage(msg)
-        $("#message").val('').replace("\n", "")
+        $("#message").val('')
       return false
 
   updateState: (users) ->
