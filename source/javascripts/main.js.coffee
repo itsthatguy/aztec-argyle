@@ -167,7 +167,6 @@ class Main
   checkForCode: (text) ->
     regex = /^\s{2,}/g
     if regex.test(text)
-      console.log true
       text = '<pre><code>' + text + '</code></pre>'
     else text
 
