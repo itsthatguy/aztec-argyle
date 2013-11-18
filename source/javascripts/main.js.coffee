@@ -76,6 +76,14 @@ class Main
       $('.input-wrapper').removeClass('focus')
 
 
+    $input.on "keypress", (e) =>
+      if (e.keyCode == 13)
+        if (!e.shiftKey)
+          e.preventDefault()
+          return
+        if (e.shiftKey)
+            $("form").submit()
+
     $('a.button, button').on 'click', (e) => @focusInput()
 
     $('.avatars').on "click", ".avatar", (e) =>

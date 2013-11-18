@@ -172,7 +172,7 @@ $link-hover-color: $ruby;
 .input-wrapper {
   @include transition(all .4s);
   background: white;
-  padding: 10px 10px 9px;
+  padding: 10px 15px 9px;
   &.focus { background: darken(#fff, 2%); }
 }
 #message {
@@ -188,6 +188,7 @@ $link-hover-color: $ruby;
   margin: 0;
   position: relative;
   z-index: 0;
+  resize: none;
 }
 button.prefix {
   @include box-shadow(none);
