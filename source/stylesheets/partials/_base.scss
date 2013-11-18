@@ -175,7 +175,7 @@ $link-hover-color: $ruby;
   padding: 10px 10px 9px;
   &.focus { background: darken(#fff, 2%); }
 }
-input#message {
+#message {
   @include border-radius(none);
   @include transition(all .4s);
   @include box-shadow(none);
