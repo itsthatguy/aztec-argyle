@@ -208,5 +208,7 @@ button, .button {
 button::-moz-focus-inner { border: 0; }
 
 pre {
-  background: $grey;
+  background: rgba($grey, .2);
+  font-weight: normal;
+  font-size: emCalc(14);
 }
