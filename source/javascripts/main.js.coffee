@@ -167,7 +167,7 @@ class Main
   checkForCode: (text) ->
     regex = /^\s{2,}/g
     if regex.test(text)
-      text = '<pre><code>' + text + '</code></pre>'
+      text = '<pre><code>' + text.replace(/\\r\\n/g, '<br />') + '</code></pre>'
     else text
 
   breakupText: (text) ->
