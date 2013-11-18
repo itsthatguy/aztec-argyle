@@ -77,12 +77,8 @@ class Main
 
 
     $input.on "keypress", (e) =>
-      if (e.keyCode == 13)
-        if (!e.shiftKey)
-          e.preventDefault()
-          return
-        if (e.shiftKey)
-            $("form").submit()
+      if (e.keyCode == 13 && !e.shiftKey)
+        $("form").submit()
 
     $('a.button, button').on 'click', (e) => @focusInput()
 
