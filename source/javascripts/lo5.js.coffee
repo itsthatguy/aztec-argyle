@@ -72,7 +72,6 @@ class Lo5
       name: p.person.displayName
       data: event.message
 
-
   getUserData: (persons) ->
     data = persons.map (p) ->
       sid: p.id
@@ -86,23 +85,8 @@ class Lo5
   sendMessage: (name, msg) ->
     gapi.hangout.data.sendMessage("#{name}", "#{msg}")
 
-  addUser: (user) ->
-    @queueMessage("add-user", user)
-
-  removeUser: (user) ->
-    @queueMessage("remove-user", user)
-
-  queueMessage: (event, data) ->
-    item = JSON.stringify("event": event, "data": data)
-    @log "queueMessage:On", item
-    gapi.hangout.data.sendMessage item
-
-  releaseQueue: ->
-    for item in queue
-      @ws.send item
-
   log: (params...) ->
-    console.log(params) if @logging 
-    
+    console.log(params) if @logging
+
 
   $ -> window.lo5 = new Lo5()
