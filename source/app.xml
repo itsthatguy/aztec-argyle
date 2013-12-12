@@ -22,7 +22,7 @@
 
 <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<link href="//aztec-argyle.herokuapp.com/stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="//thunderbolt-standup.herokuapp.com/stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
 
 
 
@@ -57,7 +57,7 @@
 </div>
 
 
-<script src="//aztec-argyle.herokuapp.com/javascripts/main.js"></script>
+<script src="//thunderbolt-standup.herokuapp.com/javascripts/main.js"></script>
 </body>
 ]]>
 </Content>
